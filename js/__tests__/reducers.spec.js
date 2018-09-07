@@ -8,7 +8,10 @@ test('@@INIT', () => {
 });
 
 test('SET_SEARCH_TERM', () => {
-  const state = reducers({ searchTerm: '', apiData: {} }, { type: 'SET_SEARCH_TERM', payload: 'orange' });
+  const state = reducers(
+    { searchTerm: '', apiData: {} },
+    { type: 'SET_SEARCH_TERM', payload: 'orange' }
+  );
   expect(state).toEqual({ searchTerm: 'orange', apiData: {} });
 });
 

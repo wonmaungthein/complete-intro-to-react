@@ -32,13 +32,18 @@ class Details extends React.Component {
           <h1>{title}</h1>
           <h2>({year})</h2>
           {rating}
-          <img src={`/public/img/posters/${poster}`} alt={`Poster for ${title}`} />
+          <img
+            src={`/public/img/posters/${poster}`}
+            alt={`Poster for ${title}`}
+          />
           <p>{description}</p>
         </section>
         <div>
           <iframe
             title="YouTube Video Frame"
-            src={`https://www.youtube-nocookie.com/embed/${trailer}?rel=0&amp;controls=0&amp;showinfo=0`}
+            src={
+              `https://www.youtube-nocookie.com/embed/${trailer}?rel=0&amp;controls=0&amp;showinfo=0`
+            }
             frameBorder="0"
             allowFullScreen
           />
@@ -49,7 +54,9 @@ class Details extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const apiData = state.apiData[ownProps.show.imdbID] ? state.apiData[ownProps.show.imdbID] : {};
+  const apiData = state.apiData[ownProps.show.imdbID]
+    ? state.apiData[ownProps.show.imdbID]
+    : {};
   return {
     rating: apiData.rating
   };
